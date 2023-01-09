@@ -1,3 +1,11 @@
+<!--
+ * @Author: 王云飞
+ * @Date: 2023-01-09 21:53:35
+ * @LastEditTime: 2023-01-09 22:05:43
+ * @LastEditors: 王云飞
+ * @Description: 
+ * 
+-->
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png"></image>
@@ -11,15 +19,21 @@
 export default {
   data() {
     return {
-      title: 'Hello',
+      title: 'Hello'
     }
   },
   onLoad() {},
-  methods: {},
+  methods: {}
 }
 </script>
 
-<style>
+<style lang="scss">
+$fz36: 72rpx;
+
+.title {
+  font-size: $fz36;
+  color: $color-pr;
+}
 .content {
   display: flex;
   flex-direction: column;
@@ -39,10 +53,5 @@ export default {
 .text-area {
   display: flex;
   justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
 }
 </style>

@@ -2,6 +2,7 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
+    "cz": "git add . && cz",
     "dev:h5": "uni",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
@@ -55,6 +56,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.4.1",
+    "@commitlint/config-conventional": "^17.4.0",
     "@dcloudio/types": "^3.0.17",
     "@dcloudio/uni-automator": "3.0.0-3061520221228001",
     "@dcloudio/uni-cli-shared": "3.0.0-3061520221228001",
@@ -62,14 +65,29 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-3061520221228001",
     "@vue/eslint-config-standard": "^8.0.1",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.6",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.31.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.2",
     "sass": "^1.57.1",
     "vite": "3.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
