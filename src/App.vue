@@ -1,7 +1,7 @@
 <!--
  * @Author: 王云飞
  * @Date: 2023-01-09 15:57:35
- * @LastEditTime: 2023-01-09 17:30:54
+ * @LastEditTime: 2023-01-10 09:36:12
  * @LastEditors: 王云飞
  * @Description: 
  * 
@@ -25,6 +25,6 @@ const store = useUserStore()
 console.log('store.token', store.token)
 </script>
 
-<style>
-/*每个页面公共css */
+<style lang="scss">
+@import 'uview-plus/index.scss';
 </style>

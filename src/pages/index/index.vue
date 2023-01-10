@@ -1,7 +1,7 @@
 <!--
  * @Author: 王云飞
  * @Date: 2023-01-09 21:53:35
- * @LastEditTime: 2023-01-10 09:31:11
+ * @LastEditTime: 2023-01-10 09:38:53
  * @LastEditors: 王云飞
  * @Description: 
  * 
@@ -12,7 +12,8 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
-    <button @click="toJump">跳转</button>
+    <!-- <button @click="toJump">跳转</button> -->
+    <u-button text="跳转" @click="toJump" type="primary"></u-button>
   </view>
 </template>
 
