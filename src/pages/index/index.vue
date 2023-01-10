@@ -1,7 +1,7 @@
 <!--
  * @Author: 王云飞
  * @Date: 2023-01-09 21:53:35
- * @LastEditTime: 2023-01-09 22:05:43
+ * @LastEditTime: 2023-01-10 09:31:11
  * @LastEditors: 王云飞
  * @Description: 
  * 
@@ -12,6 +12,7 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
+    <button @click="toJump">跳转</button>
   </view>
 </template>
 
@@ -23,7 +24,26 @@ export default {
     }
   },
   onLoad() {},
-  methods: {}
+  methods: {
+    toJump() {
+      // uni.navigateTo({
+      //   url: '/pages/test/test?a=1&b=1', // 不影响原生的参数传递
+      //   // 提供了基于页面级别的路由参数对象
+      //   routeParams: {
+      //     c: 1,
+      //     d: 1
+      //   },
+      //   // 提供了基于跳转过程的过程参数对象
+      //   passedParams: {
+      //     e: 1,
+      //     f: 1
+      //   }
+      // })
+      uni.navigateTo({
+        url: '/pages/demo/index'
+      })
+    }
+  }
 }
 </script>
 
