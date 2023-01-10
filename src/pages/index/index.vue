@@ -1,7 +1,7 @@
 <!--
  * @Author: 王云飞
  * @Date: 2023-01-09 21:53:35
- * @LastEditTime: 2023-01-10 09:38:53
+ * @LastEditTime: 2023-01-10 14:55:29
  * @LastEditors: 王云飞
  * @Description: 
  * 
@@ -11,6 +11,8 @@
     <image class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
+      <text class="color-green color-pink" mr-9>{{ title }}</text>
+      <text class="color-green font-bold ml-3">{{ title }}</text>
     </view>
     <!-- <button @click="toJump">跳转</button> -->
     <u-button text="跳转" @click="toJump" type="primary"></u-button>

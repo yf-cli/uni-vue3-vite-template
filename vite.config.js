@@ -1,12 +1,13 @@
 /*
  * @Author: 王云飞
  * @Date: 2023-01-09 15:57:35
- * @LastEditTime: 2023-01-09 22:06:00
+ * @LastEditTime: 2023-01-10 10:08:04
  * @LastEditors: 王云飞
  * @Description:
  *
  */
 import { defineConfig, loadEnv } from 'vite'
+import Unocss from 'unocss/vite'
 import uni from '@dcloudio/vite-plugin-uni'
 // https://vitejs.dev/config/
 import path from 'path'
@@ -14,7 +15,12 @@ export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd())
   console.log('env', env)
   return defineConfig({
-    plugins: [uni()],
+    plugins: [
+      uni(),
+      Unocss({
+        /* options */
+      })
+    ],
     base: env.VITE_APP_BASE,
     host: '0.0.0.0',
     server: {
