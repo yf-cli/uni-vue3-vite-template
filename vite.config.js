@@ -1,12 +1,13 @@
 /*
  * @Author: 王云飞
  * @Date: 2023-01-09 15:57:35
- * @LastEditTime: 2023-01-10 10:08:04
+ * @LastEditTime: 2023-01-11 15:49:43
  * @LastEditors: 王云飞
  * @Description:
  *
  */
 import { defineConfig, loadEnv } from 'vite'
+import h5ProdEffectPlugin from 'uni-vite-plugin-h5-prod-effect'
 import Unocss from 'unocss/vite'
 import uni from '@dcloudio/vite-plugin-uni'
 // https://vitejs.dev/config/
@@ -17,6 +18,8 @@ export default ({ mode }) => {
   return defineConfig({
     plugins: [
       uni(),
+      // 对h5 production环境打包时的特殊处理，否则uni-crazy-router在这个环境会异常
+      h5ProdEffectPlugin(),
       Unocss({
         /* options */
       })

@@ -1,7 +1,7 @@
 /*
  * @Author: 王云飞
  * @Date: 2022-06-21 09:53:52
- * @LastEditTime: 2022-06-27 15:52:33
+ * @LastEditTime: 2023-01-11 15:50:26
  * @LastEditors: 王云飞
  * @Description:
  *
@@ -10,7 +10,7 @@ import axios from 'axios'
 
 import { getFullURL } from '@/utils'
 
-import store from '@/store'
+import { useUserStore } from '@/store/user.js'
 
 const instance = axios.create({
   // Web 侧可以通过 vite.config.js 中的 proxy 配置，指定代理
@@ -51,10 +51,11 @@ const instance = axios.create({
 
 // 请求拦截
 instance.interceptors.request.use(config => {
+  const store = useUserStore()
   const { method } = config
   const headers = {
     // token: uni.getStorageSync('token')
-    token: store.getters.token
+    token: store.token
   }
   // 不缓存get请求
   if (method === 'get') {
