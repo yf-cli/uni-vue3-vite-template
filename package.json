@@ -2,7 +2,7 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
-    "cz": "git add . && cz",
+    "cz": "git add . && npx czg",
     "dev:h5": "uni",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
@@ -35,7 +35,8 @@
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
-    "preinstall": "npx only-allow npm"
+    "preinstall": "npx only-allow npm",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-3061520221228001",
@@ -71,6 +72,7 @@
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.6",
     "cz-git": "^1.4.1",
+    "czg": "^1.4.1",
     "eslint": "^8.31.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
@@ -90,8 +92,21 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,less,styl,html}": [
+      "prettier --write"
+    ],
+    "*.md": [
       "prettier --write"
     ]
   }
